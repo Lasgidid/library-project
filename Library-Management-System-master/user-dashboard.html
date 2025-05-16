@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Library Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Library User</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="fas fa-book"></i> Browse Books</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-clock"></i> My Borrowed</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-history"></i> History</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <h1>Browse Books</h1>
+                <div class="user-info">
+                    <span class="user-name">John Doe</span>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+
+            <!-- Browse Books Section -->
+            <div id="browse-section" class="dashboard-section active">
+                <!-- Search and Filter Bar -->
+                <div class="action-bar">
+                    <div class="search-filters">
+                        <div class="search-bar">
+                            <input type="text" id="searchInput" placeholder="Search books by title, author, or genre...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="filters">
+                            <select id="genreFilter">
+                                <option value="">All Genres</option>
+                                <option value="Fiction">Fiction</option>
+                                <option value="Non-Fiction">Non-Fiction</option>
+                                <option value="Science">Science</option>
+                                <option value="Technology">Technology</option>
+                                <option value="History">History</option>
+                            </select>
+                            <select id="availabilityFilter">
+                                <option value="">All Status</option>
+                                <option value="Available">Available</option>
+                                <option value="Borrowed">Borrowed</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Books Grid -->
+                <div class="books-grid" id="booksGrid">
+                    <!-- Books will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- My Borrowed Books Section -->
+            <div id="borrowed-section" class="dashboard-section">
+                <div class="table-container">
+                    <table class="borrowed-table">
+                        <thead>
+                            <tr>
+                                <th>Book Cover</th>
+                                <th>Title</th>
+                                <th>Borrow Date</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="borrowedTableBody">
+                            <!-- Borrowed books will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div id="history-section" class="dashboard-section">
+                <div class="table-container">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Book Cover</th>
+                                <th>Title</th>
+                                <th>Borrow Date</th>
+                                <th>Return Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTableBody">
+                            <!-- History will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Profile Section -->
+            <div id="profile-section" class="dashboard-section">
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <i class="fas fa-user-circle profile-avatar"></i>
+                        <h2>John Doe</h2>
+                        <p>Member since: January 2025</p>
+                    </div>
+                    <div class="profile-details">
+                        <div class="detail-group">
+                            <label>Email</label>
+                            <p>john.doe@example.com</p>
+                        </div>
+                        <div class="detail-group">
+                            <label>Library Card Number</label>
+                            <p>LIB-2025-001</p>
+                        </div>
+                        <div class="detail-group">
+                            <label>Current Borrowed Books</label>
+                            <p>2 of 5 maximum</p>
+                        </div>
+                        <div class="detail-group">
+                            <label>Account Status</label>
+                            <p class="status-active">Active</p>
+                        </div>
+                    </div>
+                    <button class="primary-btn">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Book Details Modal -->
+        <div id="bookModal" class="modal">
+            <div class="modal-content book-details">
+                <div class="modal-header">
+                    <h2>Book Details</h2>
+                    <button class="close-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="book-info">
+                    <!-- Book details will be dynamically added here -->
+                </div>
+                <div class="modal-actions">
+                    <button class="secondary-btn" id="closeBtn">Close</button>
+                    <button class="primary-btn" id="borrowBtn">
+                        <i class="fas fa-book"></i> Borrow Book
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/user.js"></script>
+</body>
+</html>

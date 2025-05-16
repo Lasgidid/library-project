@@ -1,0 +1,171 @@
+.error-login-message {
+  text-align: center;
+  color: red;
+  padding: 5px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.not-box {
+  flex: 18%;
+  border-radius: 5px;
+  padding: 1em 1em;
+  text-align: left;
+  margin: 0px 5px;
+  color: gray;
+}
+
+.not-box.books {
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3%);
+}
+
+.not-box:hover {
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3%);
+  transition: all 0.3s ease;
+}
+
+.not-box h2 {
+  color: #000;
+}
+
+.primary-link {
+  background-color: #4caf50;
+  color: #fff;
+  border: 2px solid #4caf50;
+  padding: 0.3rem;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
+
+.primary-link:hover {
+  background-color: #40a049;
+}
+
+.quick-link {
+  padding: 0.5rem;
+  color: #4caf50;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  margin-top: 0.3rem;
+}
+
+.quick-link:hover {
+  padding: 0.5rem;
+  background-color: #4caf50;
+  color: white;
+  border: 1px solid #4caf50;
+  border-radius: 5px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 0.3rem;
+  transition: all 0.2s ease;
+}
+
+.books {
+  border: 2px solid #4caf50;
+  background-color: white;
+  color: gray;
+}
+
+.stock {
+  background-color: rgb(255, 255, 255);
+}
+
+.overdue {
+  background-color: rgb(255, 255, 255);
+}
+
+.borrowed {
+  background-color: rgb(255, 255, 255);
+}
+
+@media (max-width: 760px) {
+  .not-box {
+    flex: 80%;
+    margin-bottom: 12px;
+  }
+
+  .row {
+    flex-wrap: wrap;
+    padding: 12px;
+  }
+}
+
+.alert {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+/* Profile Section */
+.profile-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.profile-form {
+  flex: 50%;
+  background-color: white;
+  margin: 0 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  font-size: 5rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.profile-header h2 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.profile-header p {
+  color: #666;
+}
+
+.profile-details {
+  margin-bottom: 2rem;
+}
+
+.detail-group {
+  margin-bottom: 1.5rem;
+}
+
+.detail-group label {
+  display: block;
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.detail-group p {
+  font-size: 1rem;
+  color: #333;
+}
